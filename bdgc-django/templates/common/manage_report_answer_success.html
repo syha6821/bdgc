@@ -1,0 +1,36 @@
+<head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+</head>
+
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap.min.css' %}">
+
+
+<div class="container my-3">
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" href="statistics">통계</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active"  aria-current="page"  href="report_list">문의확인</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="user">유저관리</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../logout">로그아웃</a>
+    </li>
+  </ul>
+    
+    <h1 class="border-bottom py-2">답변 완료.</h2>
+
+    <h2 class="border-bottom">해당 유저에게 메일을 전송했습니다</h2>
+    
+    <button onclick = "location.href = '../report_list'" class="btn btn-secondary">문의내역으로 돌아가기</button>
+</div>
+

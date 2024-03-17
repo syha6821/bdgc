@@ -1,0 +1,115 @@
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #3684f1;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #3684f1 transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+.hidden{
+    display: none;
+}
+
+.sign-up-input-area{
+    width: fit-content;
+    height: fit-content;
+    margin: 30px auto;
+}
+a{
+    text-decoration: none;
+}
+h1{
+    width: fit-content;
+    margin: 20px auto 0 auto;
+    font-size: 20px;
+    text-align: center;
+}
+h2{
+    width: fit-content;
+    margin: 20px auto 0 auto;
+    font-size: 15px;
+    text-align: center;
+    color: gray;
+}
+
+.input-box{
+    width: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+input{
+    width: 80%;
+    font-size: 20px;
+}
+
+.email-box{
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    width: fit-content;
+    margin-top: 100px;
+    margin-bottom: 250px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.5s;
+}
+
+.email-span{
+    height: fit-content;
+}
+
+/* 버튼 */
+
+.blue-button{
+    background-color: #3684f1;
+}
+
+.blue-button-disable{
+    background-color: #c1d3ee;
+}
+
+.next-button-solo{
+    width: 300px;
+    margin: 0 auto;
+    color: white;
+    font-size: 15px;
+    height: 40px;
+    line-height: 35px;
+    border-radius: 10px;
+}
+
+#ring-parent{
+    text-align: center;
+}

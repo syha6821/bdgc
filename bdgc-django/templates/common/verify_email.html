@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>회원가입-배달가치</title>
+    <link rel="stylesheet" href="../../static/css/reset.css">
+    <link rel="stylesheet" href="../../static/css/common_style.css">
+    <link rel="stylesheet" href="../../static/css/common/verify_email.css">
+    <script defer type="text/javascript" src="../../static/js/common/verify_email.js"></script>
+</head>
+<body>
+    {% csrf_token %}
+    <header>
+        <div class="header-area" onclick="location.href='/'">
+            <div class="logo-box">
+                <img class="logo-image" src="../../static/image/bdgc_logo.png">
+            </div>
+            <div class="profile-box">
+                <img class="profile-image" src="../../static/image/user_icon.png">
+            </div>
+        </div>
+    </header>
+
+    
+    <h1>회원가입</h1>
+    <h2>학교 이메일을 인증해 주세요</h2>
+    
+    <div class="edit-info-modal">
+        <div class="info-content-box" id="policy-approve-box">
+            <div class="info-edit-select-box">
+                <span style="margin-bottom: 30px; font-weight: 500; font-size: 17px; text-align: center;">서비스 이용을 위해<br>약관에 동의를 하셔야합니다</span>
+                <button onclick="location.href='https://fabulous-dimple-deb.notion.site/1bd89df17d29498b941abdbdfa0dcdb7'">약관</button>
+                <button onclick="location.href='https://fabulous-dimple-deb.notion.site/a17847c2fbf546b1aa51eb91b2d31557'">위치정보 약관</button>
+            </div>
+            <div class="modal-button-box">
+                <button type="button" id="modal-close-button" onclick="policy_approve_box_close()">동의</button>
+            </div>
+        </div>
+        
+        <div class="info-content-box hidden" id="alim-approve-box">
+            <div class="app-icon-box">
+                <img class="kakao-app-icon bounce-4" src="../../static/image/kakao_logo.png">
+            </div>
+            <div class="info-edit-select-box">
+                <span style="margin-bottom: 30px; font-weight: 600; font-size: 17px; text-align: center; line-height : 25px;">주변에 배달 공유 파티가 생기면 <br>카톡으로 알림이 갑니다</span>
+                <span style="margin-bottom: 30px; font-weight: 500; color: gray; font-size: 12px; text-align: center;">원하지 않는 경우 마이페이지에서 설정이 가능합니다</span>
+            </div>
+            <div class="modal-button-box">
+                <button type="button" id="modal-close-button" onclick="edit_info_modal_close()">이해했어요</button>
+            </div>
+        </div>
+        
+        <div class="modal-layer">
+        </div>
+    </div>
+
+
+
+    <div class="email-box" id="email-box-id">
+        <div class="input-box">
+            <input type="text" id="email-input" spellcheck="false">
+        </div>
+        <span class="email-span">@kumoh.ac.kr</span>
+
+        <div id="ring-parent">
+            <div class="lds-ring hidden"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+
+    
+
+    <a>
+    <button class="button next-button-solo blue-button-disable" id="verify-button" disabled>
+        인증하기
+    </button>
+    </a>
+</body>
+</html>

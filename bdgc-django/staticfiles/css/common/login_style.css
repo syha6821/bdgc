@@ -1,0 +1,148 @@
+html,body{
+    height:100%;
+}
+
+a{
+    text-decoration: none;
+    color: gray;
+}
+
+.login-input-area{
+    position: relative;
+    top:100px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.user-id-box{
+    display: flex;
+    align-items: center;
+    background-color: #f2f3f3;
+    width: 333px;
+    height: 52px;
+    border: 1px solid #dddfe2;
+    border-radius: 7px;
+    margin: 10px auto;
+}
+
+
+#user-id{
+    position: relative;
+    width: 100%;
+    left: 15px;
+    max-width: 270px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 16px;
+    border: none;
+}
+
+#user-id:focus{
+    outline: none;
+}
+
+.user-id-image{
+    position: relative;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+.user-password-box{
+    display: flex;
+    margin: 10px auto;
+    align-items: center;
+    background-color: #f2f3f3;
+    border: 1px solid #dddfe2;
+    border-radius: 7px;
+    width: 333px;
+    height: 52px;
+}
+
+#user-password{
+    position: relative;
+    width: 100%;
+    left: 15px;
+    max-width: 270px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 16px;
+    border: none;
+}
+
+#user-password:focus{
+    outline: none;
+}
+
+.user-password-image{
+    position: relative;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+.login-button{
+    position: relative;
+    margin: 0 auto;
+    color: white;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: #3684f1;
+    top:140px;
+    left:0;
+}
+
+.signup-button{
+    position: relative;
+    margin: 0 auto;
+    color: white;
+    width: 110px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: #43b72b;
+    top:170px;
+}
+
+.login-list{
+    display: block;
+    font-size: 13px;
+    left: 5px;
+    width:fit-content;
+    margin: 0 auto;
+    position: relative;
+    color: gray;
+    top: 240px;
+}
+
+.login-list>ul>li{
+    float: left;
+    padding: 0 10px;
+    border-right: 1px solid gray;
+}
+
+.login-list>ul>li:first-child{
+    border-left: none;
+}
+
+.login-list>ul>li:last-child{
+    border-right: none;
+}
+
+#footer-info{
+    height: 0;
+    overflow: hidden;
+    transition-duration: 1s;
+}
+
+#error{
+    width: fit-content;
+    margin: 110px auto -130px auto;
+    font-size: 13px;
+    text-align: center;
+    color: red;
+}

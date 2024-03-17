@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    {% include "meta.html"%}
+    
+    <title>배달가치</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+   
+    <style>
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+            font-family: 'Noto Sans KR', sans-serif;
+            vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+
+        
+        button{
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        header{
+            position: sticky;
+            top:0;
+            background-color: white;
+            border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+            z-index: 50;
+        }
+
+        .header-area{
+            display: flex;
+            position: relative;
+            background-color: white;
+            margin: 0 auto;
+            align-items: center;
+            height: 60px;
+            width: auto;
+            max-width: 500px;
+        }
+
+        .logo-box{
+            margin: 0 auto;
+        }
+
+        .logo-image{
+            width: 90px;
+        }
+
+        .profile-box{
+            position: absolute;
+            right: 10px;
+        }
+
+        .profile-image{
+            width: 30px;
+        }
+        .info-box{
+            position: absolute;
+            left: 13px;
+        }
+
+        .info-image{
+            width: 28px;
+        }
+
+        input:focus{
+            outline: none;
+        }
+
+        
+        .name-of-page{
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 20px;
+        }
+        .fail-box{
+            display: block;
+            width: 100%;
+        }
+        #error-icon{
+            display: block;
+            margin: 150px auto;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-area">
+            <div class="logo-box" onclick="location.href='/'">
+                <img class="logo-image" src="../../static/image/bdgc_logo.png">
+            </div>
+            <div class="profile-box">
+                <img class="profile-image" src="../../static/image/user_icon.png">
+            </div>
+        </div>
+    </header>
+
+    <div class="make-party-input-area hidden" id="nineth-page">
+        <span class="name-of-page">{{error}}</span>
+        <div class="make-party-content-box" id="final-page">
+            <div class="fail-box">
+                <span id="error-message"></span>
+                <img id="error-icon" src="../../static/image/error_icon.png">
+            </div>
+            
+        </div> 
+        </div>
+    </div>
+</body>
+</html>

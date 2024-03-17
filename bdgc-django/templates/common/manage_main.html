@@ -1,0 +1,38 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+</head>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap.min.css' %}">
+
+<div class="container">
+    <br>
+    <h1>관리자 계정 메인페이지</h1>
+    <br>
+    <div class="row g-2">
+        <div class="col-15">
+            <div class="p-3 border bg-light" onclick="location.href ='../common/manage/statistics'"
+                style="cursor:pointer;">통계</div>
+        </div>
+    </div>
+    <br>
+    <div class="row g-2">
+        <div class="col-15">
+            <div class="p-3 border bg-light" onclick="location.href ='../common/manage/report_list'"
+                style="cursor:pointer;">문의 확인</div>
+        </div>
+    </div>
+    <br>
+    <div class="row g-2">
+        <div class="col-15">
+            <div class="p-3 border bg-light" onclick="location.href ='../common/manage/user'" style="cursor:pointer;">유저 관리</div>
+        </div>
+    </div>
+    <br>
+    <div class="row g-2">
+        <div class="col-15">
+            <div class="p-3 border bg-light" onclick="location.href ='../common/logout'" style="cursor:pointer;">로그아웃
+            </div>
+        </div>
+    </div>
+</div>

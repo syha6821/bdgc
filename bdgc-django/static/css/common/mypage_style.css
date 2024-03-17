@@ -1,0 +1,451 @@
+a {
+    text-decoration: none;
+    /* color: black; */
+}
+
+.name-of-page {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    top: 70px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    /* border-bottom: 1px solid #dddfe2; */
+    background-color: #ffffff;
+    font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+}
+
+.name-of-page span {
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.my-info-area {
+    position: relative;
+    top: 70px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.my-info-box {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.my-info-box button {
+    display: block;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: auto;
+    width: 100px;
+    font-weight: 600;
+    margin-right: 30px;
+    color: gray;
+}
+
+.my-info-box span {}
+
+#nickname,
+#my-location,
+#party-history,
+#extra,
+#alim {
+    margin-left: 30px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+#location-select-box {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: 30px;
+    position: relative;
+    background-color: white;
+    height: 50px;
+}
+
+#location-select-box .select-box {
+    width: 80%;
+    -o-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    border: none;
+    width: fit-content;
+    font-size: 15px;
+    color: #3684f1;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+#select-under-arrow {
+    position: absolute;
+    top: 8px;
+    left: 85%;
+    font-size: 20px;
+    font-weight: 800;
+    color: gray;
+}
+
+#location-select-box .select-box:focus {
+    outline: none;
+}
+
+#location-select-box select option {
+    text-align: center;
+    height: 20px;
+}
+
+#party-history-box,
+#extra-box {
+    margin-top: 100px;
+}
+
+#extra {}
+
+#footer-info {
+    height: 0;
+    overflow: hidden;
+    transition-duration: 1s;
+}
+
+
+.edit-info-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.edit-info-modal .info-content-box {
+    position: relative;
+    width: 90%;
+    margin-top: 60px;
+    max-width: 600px;
+    height: fit-content;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: none;
+    padding-bottom: 1px;
+}
+
+.edit-info-modal .info-edit-select-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: white;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+}
+
+
+.edit-info-modal .info-edit-select-box button {
+    display: block;
+    border-radius: 10px;
+    font-weight: 400;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    border: 0;
+    color: white;
+    font-size: 15px;
+    background-color: #3684f1;
+    margin: 10px auto;
+}
+
+.edit-info-modal .info-nickname-edit-box {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: white;
+    margin: 0 auto;
+    padding-top: 90px;
+    padding-bottom: 20px;
+}
+
+.edit-info-modal .info-password-edit-box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: white;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+
+.edit-info-modal .modal-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0,0,0,0.3); */
+    background-color: white;
+    z-index: -1;
+}
+
+.edit-info-modal #modal-close-button {
+    display: block;
+    top: 100%;
+    border-radius: 10px;
+    font-weight: 600;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    border: 0;
+    color: gray;
+    font-size: 15px;
+    background-color: #efefef;
+}
+
+.edit-info-modal #modal-save-button {
+    display: none;
+    top: 100%;
+    border-radius: 10px;
+    font-weight: 600;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    border: 0;
+    color: white;
+    font-size: 15px;
+    background-color: #c1d3ee;
+}
+
+.edit-info-modal #map-for-search {
+    width: 100%;
+    height: 340px;
+}
+
+.input-box-parent {
+    margin-bottom: 10px;
+}
+
+.name-of-input-box {
+    display: block;
+    width: 220px;
+    margin-left: 10px;
+    padding: 7px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.explain-span {
+    display: block;
+    width: 300px;
+    color: gray;
+    margin-left: 10px;
+    padding: 7px;
+    font-size: 12px;
+}
+
+#nickname-input,
+#current-password-input,
+#password-input,
+#password-check-input {
+    width: 80%;
+
+}
+
+.modal-button-box {
+    display: flex;
+    width: 200px;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.hidden {
+    display: none;
+}
+
+#log-out-button {
+    display: block;
+    width: 200px;
+    height: 30px;
+    border: none;
+    color: gray;
+    font-weight: 600;
+    border-radius: 5px;
+    margin: 0 auto 50px auto;
+}
+
+
+.extra-info-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.extra-info-modal .extra-info-content-box {
+    position: relative;
+    width: 90%;
+    margin-top: 60px;
+    max-width: 600px;
+    height: fit-content;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: none;
+    padding-bottom: 1px;
+}
+
+.extra-info-modal .modal-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+}
+
+
+.extra-info-modal .extra-info-select-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: white;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+}
+
+.extra-info-modal .extra-info-select-box a {
+    display: block;
+    margin: 0 auto;
+}
+
+.extra-info-modal .extra-info-select-box span {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#withdraw {
+    margin: 0 auto;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    color: gray;
+    height: 35px;
+    margin-bottom: 30px;
+}
+
+#close-extra-info-modal-button {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    font-weight: 600;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    border: 0;
+    color: gray;
+    font-size: 15px;
+    background-color: #efefef;
+}
+
+
+
+
+.switch {
+    -webkit-tap-highlight-color: transparent;
+    margin-left: auto;
+    margin-right: 50px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+    -webkit-tap-highlight-color: transparent;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

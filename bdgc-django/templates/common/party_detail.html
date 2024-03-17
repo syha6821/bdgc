@@ -1,0 +1,66 @@
+<head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <link rel="stylesheet" href="../../../../static/css/reset.css">
+    <link rel="stylesheet" href="../../../../static/css/common_style.css">
+</head>
+
+{% load mathfilters %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap.min.css' %}">
+
+<header>
+    <div class="header-area">
+        <div class="logo-box" onclick="location.href='/'">
+            <img class="logo-image" src="../../../static/image/bdgc_logo.png">
+        </div>
+        <div class="profile-box" onclick="location.href='/common/myPage'">
+            <img class="profile-image" src="../../../static/image/user_icon.png">
+        </div>
+    </div>
+</header>
+
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" href="../party_history">내 파티기록</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-disabled="true">파티내용</a>
+    </li>
+</ul>
+
+<div class="container my-3">
+    <div class="card">
+        <h5 class="card-header">가게명</h5>
+        <div class="card-body"><h5 class="card-title">{{ party.restaurant_name }}</h5></div>
+        <h5 class="card-header">상세정보</h5>
+         <div class="card-body">
+            <p class="card-text">가게주소 : {{ party.restaurant_link }}</p>
+            <p class="card-text">목표금액 : {{ party.goal_price }}</p>
+            <p class="card-text">파티장 : {{ party.host_identification }}</p>
+            <p class="card-text">주문시각 : {{ party.order_time }}</p>
+            <p class="card-text">배달장소 : {{ party.location.location_name_small }}</p>
+            <p class="card-text">1인당배달비 : {{ party.delivery_cost|intdiv:party.required_people_number }}</p>
+        </div>
+    </div>
+    
+    {% for order in order_list %}
+    <div class="card my-3">
+        <div class="card-header">{{ order.user_identification }}</div>
+        <div class="card-body">
+            <!--파티 본문-->
+            <div class="card-text" style="white-space: pre-line;">메뉴 : {{ order.menu_name }}</div>
+            <div class="card-text" style="white-space: pre-line;">갯수 : {{ order.menu_amount }}</div>
+            <div class="card-text" style="white-space: pre-line;">가격 : {{ order.menu_price }}</div>
+            {% if order.personal_request != '-' %}
+            <div class="card-text" style="white-space: pre-line;">요청사항 : {{ order.personal_request }}</div>
+            <div class="card-text" style="white-space: pre-line;">참가시간 : {{ order.attendance_time }}</div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+

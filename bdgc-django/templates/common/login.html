@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인-배달가치</title>
+    <link rel="stylesheet" href="../../static/css/reset.css">
+    <link rel="stylesheet" href="../../static/css/common_style.css">
+    <link rel="stylesheet" href="../../static/css/common/login_style.css">
+    <script defer type="text/javascript" src="../../static/js/common/login.js"></script>
+</head>
+
+
+<body>
+    <header>
+        <div class="header-area">
+            <div class="logo-box" onclick="location.href='/'">
+                <img class="logo-image" src="../../static/image/bdgc_logo.png">
+            </div>
+            <div class="profile-box">
+                <img class="profile-image" src="../../static/image/user_icon.png">
+            </div>
+        </div>
+    </header>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <div class="login-input-area">
+            <div class="user-id-box">
+                <img class="user-id-image" src="../../static/image/user_id_image.png">
+                <div class="form-group">
+                    <input type="text" id="user-id" placeholder="ID" spellcheck="false" name="input_id" autofocus>
+                </div>
+            </div>
+            <div class="user-password-box">
+                <img class="user-password-image" src="../../static/image/user_password_image.png">
+                <div class="form-group">
+                    <input type="password" id="user-password" placeholder="Password" spellcheck="false"
+                        name="input_password">
+                </div>
+            </div>
+        </div>
+
+        <h2 id="error">{{error}}</h2>
+
+        <input class="button login-button" type="submit" value="로그인">
+
+    </form>
+
+
+    <div class="button signup-button" OnClick="location.href ='../signup'">
+        회원가입
+    </div>
+
+    <div class="login-list">
+        <ul>
+            <li><a href="../find_id">아이디 찾기</a></li>
+            <li><a href="../change_password">비밀번호 찾기</a></li>
+        </ul>
+    </div>
+
+    <div class="test"></div>
+
+    <footer>
+        <div id="open-footer-button" class="open">
+            사이트 정보 확인
+        </div>
+        <div id="footer-info">
+            <div>
+                <a onclick="location.href='https://fabulous-dimple-deb.notion.site/b477b8efa20b446caf7576e33afed8df'">이용약관 |</a>
+                <span>상호 : 배달가치 |</span>
+                <span>대표 : 송윤하</span>
+            </div>
+            <div>
+                <a>사업등록번호 : 564-10-02044</a>
+            </div>
+            <div>
+                <a>장소 : 경상북도 구미시 거양길 18-4</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

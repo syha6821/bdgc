@@ -1,0 +1,259 @@
+
+a{
+    text-decoration: none;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #3684f1;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #3684f1 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+}
+
+#ring-parent{
+    text-align: center;
+}
+
+.hidden{
+    display: none;
+}
+
+.percentage-bar{
+    position: fixed;
+    width: 100%;
+    height: 10px;
+    background-color: #dddfe2;
+    z-index: 100;
+}
+
+.percentage-1{
+    width: 10%;
+    height: 10px;
+    background-color: #1677f2;
+    transition-duration: 1s;
+}
+
+.sign-up-input-area{
+    max-width: 500px;
+    width: 100%;
+    height: fit-content;
+    margin: 15px auto;
+}
+
+.name-of-page{
+    display: block;
+    position: fixed;
+    z-index: 90;
+    top:70px;
+    width: 100%;
+    max-width: 500px;
+    height: 45px;
+    padding-top: 20px;
+    padding-left: 25px;
+    border-bottom: 1px solid #dddfe2;
+    background-color: #ffffff;
+    font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+}
+
+.sign-up-content-box{
+    position: relative;
+    margin-top: 80px;
+}
+
+
+
+.phone-number-explain-span{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    color: gray;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    transition-duration: 1s;
+}
+
+    
+#first-page .input-box{
+    width: 220px;
+    margin-bottom: 200px;
+    justify-content: space-evenly;
+    transition-duration: 2s;
+}
+
+#first-page .phone-number{
+    width: 45px;
+    font-size: 20px;
+    left: 0;
+    text-align: center;
+}
+
+#first-page .phone-number:first-of-type{
+    width: 34px;
+    margin-left: 10px;
+}
+
+#first-page .phone-number:last-of-type{
+    margin-right: 10px;
+}
+
+#first-page .name-of-input-box{
+    display: block;
+    width: 220px;
+    margin: 0 auto;
+    padding: 7px;
+    font-size: 13px;
+    font-weight: 500;
+    transition-duration: 1s;
+}
+
+#first-page .input-box span{
+    position: relative;
+    font-size:40px;
+    color: lightgray;
+    font-weight: 200;
+    line-height: 40px;
+    bottom: 5px;
+}
+
+#validation-code-input-box input{
+    width: 100%;
+    font-size: 20px;
+    left: 0;
+    text-align: center;
+}
+
+/* 버튼 */
+#second-page .button-box{
+    margin-top: 150px;
+    flex-direction: column;
+}
+
+.location-select-button{
+    width: 150px;
+    background-color: white;
+    margin: 0 auto;
+    color: #3684f1;
+    border: 1px solid #3684f1;
+    font-weight: 500;
+    font-size: 18px;
+    height: 40px;
+    line-height: 35px;
+    margin: 30px auto;
+    border-radius: 10px;
+    transition-duration: 1s;
+}
+
+.button-box{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.blue-button{
+    background-color: #3684f1;
+}
+
+.blue-button-disable{
+    background-color: #c1d3ee;
+}
+
+.next-button-solo{
+    width: 300px;
+    margin: 0 auto;
+    color: white;
+    font-size: 15px;
+    height: 40px;
+    line-height: 35px;
+    margin: 0 20px;
+    border-radius: 10px;
+}
+
+#third-page .sign-up-content-box{
+    margin-top: 90px;
+}
+
+#third-page .name-of-input-box{
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+    padding: 7px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+#third-page .explain-span{
+    display: block;
+    width: 250px;
+    color: gray;
+    margin: 0 auto;
+    padding: 7px;
+    font-size: 12px;
+}
+
+#third-page .input-box{
+    width: 250px;
+}
+
+#third-page input{
+    width: 80%;
+    font-size: 17px;
+}
+
+.input-box-parent{
+    margin-bottom: 10px;
+}
+
+#last-page .button-box{
+    flex-direction: column;
+    margin-top: 250px;
+}
+
+#last-page button{
+    width: 200px;
+}
+
+#error-icon{
+    width: 150px;
+    margin-top: -80px;
+}
+
+#success-icon{
+    margin: 0 auto;
+    width: 150px;
+    margin-top: -80px;
+    margin-bottom: 30px;
+}
+

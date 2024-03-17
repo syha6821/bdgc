@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    {% include "meta.html"%}
+    
+    <title>배달가치</title>
+    <link rel="shortcut icon" href="../../static/image/bdgc_logo_smile.png">
+    <link rel="stylesheet" href="../../static/css/reset.css">
+    <link rel="stylesheet" href="../../static/css/common_style.css">
+    <link rel="stylesheet" href="../../static/css/makeparty_v2_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script defer type="text/javascript" src="../../static/js/makeparty_v2.js"></script>
+    <script defer type="text/javascript" src="../../static/js/common.js"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ec6zgzjygt"></script>
+
+</head>
+<body>
+    <!-- {% csrf_token %} -->
+    <header>
+        <div class="header-area">
+            <div class="logo-box" onclick="location.href='/'">
+                <img class="logo-image " src="../../static/image/bdgc_logo.png">
+            </div>
+            <div class="profile-box">
+                <img class="profile-image" src="../../static/image/user_icon.png">
+            </div>
+        </div>
+    </header>
+
+    <div class="percentage-bar">
+        <div id="percentage" class="percentage-1"></div>
+    </div>
+
+    <div class="make-party-input-area" id="first-page">
+        <span class="name-of-page">카카오톡 그룹채팅을 시작해 주세요</span>
+        <div class="make-party-content-box">
+            <span class="openchat-explain">그룹채팅을 통해</span>
+            <br>
+            <span class="openchat-explain">파티원들에게 정보를 전달할 수 있습니다</span>
+            <div class="app-icon-box">
+                <img class="kakao-app-icon bounce-4" src="../../static/image/kakao_logo.png">
+            </div>
+        </div>        
+    </div>
+
+    <div class="make-party-input-area hidden" id="second-page">
+        <span class="name-of-page">오픈채팅 링크를 그대로 붙여넣기 해주세요</span>
+        <div class="make-party-content-box" id="kakao-before">
+            <span class="name-of-input-box">카카오톡 링크</span>
+            <div class="input-box">
+                <input type="text"  id="kakao-link" spellcheck="false">
+                <img src="../../static/image/delete_line_icon.png" class="delete-line-icon hidden">
+            </div>
+            <span class="kakao-link-explain-span">예시) 카카오톡 오픈채팅을 시작 ... https://open.kakao.com/example</span>
+        </div>
+        <div class="make-party-content-box hidden" id="kakao-after">
+            <div class="name-of-input-box" id="kakao-result"></div>
+            <div class="lds-ring" id="kakao-loading-ring"><div></div><div></div><div></div><div></div></div>
+        </div> 
+    </div>
+
+    <div class="make-party-input-area hidden" id="third-page">
+        <span class="name-of-page">앱에서 매장링크를 공유해 주세요</span>
+        <div class="make-party-content-box">
+            <span class="app-link-explain-span">사용하실 배달 앱을 선택해 주세요</span>
+            <div class="app-icon-box">
+                
+                <img class="app-icon bm-icon bounce-4" src="../../static/image/bm_logo.png">
+                <img class="app-icon bm-icon-sad hidden" src="../../static/image/bm_logo_sad.png">
+                <img class="app-icon yogiyo-icon bounce-4" src="../../static/image/yogiyo_logo.webp">
+                <img class="app-icon yogiyo-icon-sad hidden" src="../../static/image/yogiyo_logo_sad.png">
+                <img class="app-icon coupang-icon bounce-4" src="../../static/image/coupang_logo.png">
+                <img class="app-icon coupang-icon-sad hidden" src="../../static/image/coupang_logo_sad.png">
+            </div>
+            <div class="example-image-box">
+                <img class="example-image hidden" id="bm-example" src="../../static/image/bdgc_bm_example.png">
+                <img class="example-image hidden" id="yogiyo-example" src="../../static/image/bdgc_yogiyo_example.png">
+                <img class="example-image hidden" id="coupang-example" src="../../static/image/coupang_example.png">
+            </div>
+        </div>  
+        
+    </div>
+
+    
+
+    <div class="make-party-input-area hidden" id="fourth-page">
+        <span class="name-of-page">복사하신 링크를 그대로 붙여넣기 해주세요</span>
+        <div class="make-party-content-box" id="baedal-link-before">
+            <span class="name-of-input-box">매장 링크</span>
+            <div class="input-box" id="store-link-input-box">
+                <div class="single-line" id="store-link" contenteditable="true"></div>
+                <img src="../../static/image/delete_line_icon.png" class="delete-line-icon hidden">
+            </div>
+            <span class="store-link-explain-span">예시) '한솥도시락' 어때요? 배달의민족 ... https://baemin.me/example</span>
+        </div>
+
+        <div class="make-party-content-box hidden" id="baedal-link-after">
+            <div class="name-of-input-box" id="baedal-link-result"></div>
+            <div class="lds-ring" id="baedal-link-loading-ring"><div></div><div></div><div></div><div></div></div>
+        </div> 
+    </div>
+
+    <div class="make-party-input-area hidden" id="fifth-page">
+        <span class="name-of-page">주문하실 메뉴와 가격을 입력해 주세요</span>
+        <div class="name-of-input" id="name-of-store">
+            <span class="name-of-store-span">매장 링크를 그대로 입력해 주세요</span>
+            <a class="goto-name-of-store-span">
+            <span>메뉴확인</span>
+            </a>
+        </div>
+        <div class="menu-receipt first-menu-receipt">
+            <div class="menu-receipt-menu">
+                <span class="name-of-input-box">메뉴명</span>
+                <div class="input-box receipt-box" id="menu-box" >
+                    <input type="text" class="menu-name"  oninput="input_is_all_filled()" placeholder="위 음식점의 메뉴를 입력해 주세요" spellcheck="false">
+                </div>
+            </div>
+            <div class="menu-receipt-price">
+                <span class="name-of-input-box">가격</span>
+                <div class="input-box receipt-box" id="price-box">
+                    <input type="text" class="menu-prices"  oninput="input_is_all_filled()" onclick="move_cursor_before_won(event)" onkeyup="number_comma(event)" pattern="[0-9]*" min="0" id="price-box" placeholder="입력하신 메뉴의 가격을 입력해 주세요" spellcheck="false">
+                </div>
+            </div>
+            <div class="menu-receipt-number">                
+                <span class="menu-number-span name-of-input-box">수량</span>
+
+                <div class="input-box receipt-box number-box-parent">
+                    <div class="input-box receipt-box" id="number-box">
+                        <img class="number-button" id="menu-minus-button" onclick="minus_menu_number(event)" src="../../static/image/minus_icon.png">
+                        <input type="number" name="menu-number" pattern="\d*" min="1" class="menu-numbers" id="menu-number-input" value="1" spellcheck="false" readonly>
+                        <img class="number-button" id="menu-plus-button" onclick="plus_menu_number(event)" src="../../static/image/plus_icon.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="add-button button">
+            메뉴 추가
+        </button>
+    </div>
+
+    <div class="make-party-input-area hidden" id="sixth-page">
+        <span class="name-of-page">파티 조건을 입력해 주세요</span>
+        <div class="name-of-input" id="my-price-div">
+            <span>내 주문금액&nbsp;&nbsp;</span>
+            <div id="my-price"></div>
+            <span>&nbsp;원</span>
+            <a class="goto-name-of-store-span">
+                <span>매장정보</span>
+            </a>
+        </div>
+        <div class="party-setting-box">
+            <div class="party-setting-inner-box">
+                <span class="name-of-input-box">목표금액</span>
+                <div class="input-box">
+                    <input type="text" oninput="input_is_all_filled_sixth()" placeholder="파티장을 포함한 파티의 총 주문금액" id="goal-price" onkeyup="number_comma(event)" onclick="move_cursor_before_won(event)" pattern="[0-9]*" placeholder="" spellcheck="false">
+                </div>
+            </div>
+            <div class="party-setting-inner-box">
+                <span class="name-of-input-box">매장배달비</span>
+                <div class="input-box">
+                    <input type="text" oninput="input_is_all_filled_sixth()" placeholder="위 목표금액 주문 시 매장의 배달비" onkeyup="number_comma(event)" onclick="move_cursor_before_won(event)" pattern="[0-9]*" id="delivery-fee"  placeholder="" spellcheck="false">
+                </div>
+            </div>
+            <div class="party-setting-inner-box">
+                <div class="name-of-input-box">
+                    <span>모집인원</span>
+                    <br>
+                    <span id="name-of-input-box-inner-span2">파티장을 포함합니다</span>
+                </div>
+                <div class="input-box receipt-box number-box-parent">
+                    <div class="input-box" id="number-box">
+                        <img class="number-button" id="people-minus-button" onclick="minus_menu_number_person(event)" src="../../static/image/minus_icon.png">
+                        <input type="number" name="people-number" pattern="\d*" min="2" class="people-numbers" id="people-number-input" value="2" spellcheck="false" readonly>
+                        <img class="number-button" id="people-plus-button" onclick="plus_menu_number(event)" src="../../static/image/plus_icon.png">
+                    </div>
+                </div>
+
+            </div>
+            <div class="party-setting-inner-box">
+                <span class="name-of-input-box">1인당 배달비</span>
+                <span class="one-person-delivery-fee-span">입력값에 따라 자동으로 계산됩니다</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="make-party-input-area hidden" id="seventh-page">
+        <span class="name-of-page">배달 받을 위치를 설정해주세요</span>
+        <div class="name-of-input" id="location-name-box">
+            <span id="location-name-small">위치를 선택해 주세요</span>
+            <span id="location-name-big"></span>
+        </div>
+        <div class="location-setting-box">
+            <div id="map">
+                <div class="pin2" id="map-pin"></div>
+                <div class="map-button-area">
+                    <button type="button" class="button" id="kumoh-map-button">학교내부</button>
+                    <button type="button" class="button" id="oneroom-map-button">학교 앞 원룸</button>
+                    <button type="button" class="button" id="okgye-map-button">옥계</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="make-party-input-area hidden" id="eighth-page">
+        <span class="name-of-page">주문 예상 시간을 입력해 주세요</span>
+        <div class="make-party-content-box" id="party-setting-box-parent">
+            <div class="party-time-setting-box">
+                <span class="name-of-input-box">주문 예상 시간</span>
+                <input type="time" id="order-predict" oninput="input_is_all_filled_eighth()">
+            </div>
+
+            <div class="party-time-setting-box">
+                <span class="name-of-input-box">파티원을 언제까지 모집할까요?</span>
+                <input type="time" id="party-ending-time" oninput="input_is_all_filled_eighth()">
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="make-party-input-area hidden" id="nineth-page">
+        <span class="name-of-page">파티를 생성 중 입니다</span>
+        <div class="make-party-content-box" id="final-page">
+            <div class="loading-ring-parent">
+                <div class="lds-ring" id="final-loading-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+            <div class="share-link-box hidden">
+                <span id="success-message">파티가 완성되면 카톡으로 알려드릴게요!</span>
+                
+                <span class="name-of-input-box">파티참가 공유링크</span>
+                <div class="input-box">
+                    <span onclick="copyClipboard()" id="share-link"></span>
+                </div>
+                <button class="button next-button-solo blue-button" id="go-to-home-button" onclick="location.href='/'">
+                    메인페이지로 이동
+                </button>
+            </div>
+            <div class="fail-box hidden">
+                <span id="error-message"></span>
+                <img id="error-icon" src="../../static/image/error_icon.png">
+            </div>
+            
+        </div> 
+        </div>
+    </div>
+
+    
+
+    <div class="button-box">
+        <a href="kakaoopen://create/">
+        <button class="button next-button-solo blue-button" id="first-page-button" >
+            앱으로 이동하기
+        </button>
+        </a>
+
+        <button class="button next-button-solo blue-button-disable hidden" id="second-page-button" disabled>
+            다음
+        </button>
+
+        <a href="#" id="open-delivery-app">
+        <button class="button next-button-solo blue-button-disable hidden" id="third-page-button" disabled>
+            링크 복사하러 가기
+        </button>
+        </a>
+
+        <button class="button next-button-solo blue-button-disable hidden" id="fourth-page-button" disabled>
+            메뉴 입력하러 가기
+        </button>
+
+        <button class="button next-button-solo blue-button-disable hidden" id="fifth-page-button" disabled>
+            다음
+        </button>
+
+        <button class="button next-button-solo blue-button-disable hidden" id="sixth-page-button" disabled>
+            다음
+        </button>
+
+        <button class="button next-button-solo blue-button-disable hidden" id="seventh-page-button" disabled>
+            다음
+        </button>
+
+        <button class="button next-button-solo blue-button-disable hidden" id="eighth-page-button" disabled>
+            다음
+        </button>
+
+        <button id="previous-button" class="button hidden">
+            이전
+        </button>
+        <button id="next-button" class="button hidden">
+            다음
+        </button>
+        <button id="complete-button" class="button hidden">
+            완료
+        </button>    
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load mathfilters %}
+{% load static %}
+{% block content %}
+<p>가게명 : {{ party.restaurant_name }}<br></p>
+<p>가게 주소 : {{ party.restaurant_link }}<br></p>
+<p>파티장 : {{ party.host_identification }}<br></p>
+<p>주문 시각 : {{ party.order_time }}<br></p>
+<p>배달 장소 : {{ party.location.location_name_small }}<br></p>
+<p>1인당 배달비 : {{ party.delivery_cost|intdiv:party.required_people_number }}<br></p>
+<p>참가자 : <br></p>
+{% for order in order_list %}
+<div class="card my-3">
+    <div class="card-header">{{ order.user_identification }}</div>
+    <div class="card-body">
+        <!--파티 본문-->
+        <div class="card-text" style="white-space: pre-line;">메뉴 : {{ order.menu_name }}</div>
+        <div class="card-text" style="white-space: pre-line;">갯수 : {{ order.menu_amount }}</div>
+        <div class="card-text" style="white-space: pre-line;">가격 : {{ order.menu_price }}</div>
+        {% if order.personal_request != '-' %}
+        <div class="card-text" style="white-space: pre-line;">요청사항 : {{ order.personal_request }}</div>
+        <div class="card-text" style="white-space: pre-line;">참가 시각 : {{ order.attendance_time }}</div>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

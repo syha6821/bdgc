@@ -1,0 +1,369 @@
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.hidden{
+    display: none;
+}
+#nineth-page .loading-ring-parent{
+    text-align:center;
+    margin-top:230px
+}
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #3684f1;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #3684f1 transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.name-of-page{
+    display: block;
+    position: fixed;
+    z-index: 90;
+    top:61px;
+    width: 100%;
+    max-width: 500px;
+    height: 45px;
+    padding-top: 20px;
+    padding-left: 25px;
+    border-bottom: 1px solid #dddfe2;
+    background-color: #ffffff;
+    font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+}
+
+.make-party-input-area{
+    max-width: 500px;
+    width: 100%;
+    height: fit-content;
+    margin: 15px auto;
+}
+
+.make-party-content-box{
+    position: relative;
+    margin-top: 80px;
+}
+
+
+.input-box{
+    display: flex;
+    align-items: center;
+    background-color: #f2f3f3;
+    width: 90%;
+    height: 40px;
+    border: 1px solid #f2f3f3;
+    border-radius: 7px;
+    margin: 0px auto;
+}
+
+input{
+    position: relative;
+    width: 100%;
+    left: 10px;
+    max-width: 300px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 14px;
+    border: none;
+    background-color: #f2f3f3;
+}
+input:focus{
+    outline: none;
+}
+
+
+.name-of-input-box{
+    display: block;
+    margin-top: 180px;
+    margin-left: 25px;
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+
+#name-of-store{
+    display: flex;
+    position: sticky;
+    top: 127px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-left: 0;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    line-height: 18px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    border-bottom: 1px solid #dddfe2;
+    background-color: #ffffff;
+    margin-top: 0px;
+    z-index: 90;
+}
+
+.goto-name-of-store-span{
+    margin-left: auto;
+    margin-right: 30px;
+    color: #3684f1;
+    font-size: 13px;
+}
+
+
+.menu-receipt-menu{
+    margin-top: 0px;
+}
+
+.first-menu-receipt{
+    margin-top: 55px;
+}
+
+.menu-receipt:nth-of-type(1) .menu-receipt-menu{
+    margin-top: 80px;
+}
+
+.menu-receipt{
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dddfe2;
+}
+
+.added-menu-head{
+    margin-top: 13px;
+    display: flex;
+    justify-items: center;
+}
+
+#delete-menu-icon{
+    margin-right: 10px;
+    margin-left: auto;
+    width: 22px;
+}
+
+.added-menu-span{
+    margin-left: 20px;
+}
+
+
+.menu-receipt-menu, .menu-receipt-price, .menu-receipt-number{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#fifth-page .input-box{
+    width: 70%;
+}
+#fifth-page .input-box input{
+    width: 80%;
+}
+
+
+.menu-receipt-number{
+    display: flex;
+}
+
+.number-button{
+    width: 20px;
+}
+
+#menu-number-input{
+    display: block;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 20px;
+}
+
+#fifth-page .name-of-input-box, .menu-number-span{
+    margin-top: 0px;
+    width: 50px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.number-box-parent{
+    background-color: transparent;
+    border: none;
+}
+
+.number-box-parent #number-box{
+    display: flex;
+    margin-right: 5px;
+    height: 35px;
+    justify-content: space-evenly;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 1.5px #dddfe2 solid;
+    width: 100px;
+}
+
+.number-box-parent #number-box input{
+    background-color: transparent;
+    width: 20px;
+}
+
+.add-button{
+    width: 100px;
+    margin: 15px auto 110px auto;
+    border: 1px solid #3684f1;
+    color: #3684f1;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.delete-menu-animation{
+    transform: translateX(-100vw);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.join-info-area{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+#join-info-box{
+    /* border-radius: 35px; */
+    /* width: 90%; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    /* border: 2px #3684f1 solid; */
+    /* background-color: white; */
+    background-color: #c1d3ee;
+    /* border-top: 1px solid gray; */
+    color: white;
+    height: 100px;
+    margin: 0 auto;
+}
+
+#join-info-box span{
+    margin-left: 10px;
+}
+
+.join-info-span-box{
+    margin: 10px;
+}
+
+.join-info-span-box span{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#join-button{
+    border: none;
+    border-radius: 25px;
+    position: absolute;
+    background-color: #c1d3ee;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    right: 15px;
+}
+
+#nineth-page .input-box{
+    margin-top: 20px;
+    width: 300px;
+}
+
+#share-link{
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0 auto;
+    left: 0;
+    width: fit-content;
+    max-width: 80%;
+    font-size: 15px;
+    color: #1677f2;
+    text-align: center;
+    overflow: hidden;
+}
+
+#final-page{
+    text-align: center;
+    margin-bottom: 210px;
+}
+
+.share-link-box{
+    margin: 120px auto 0 auto;
+}
+
+#go-to-home-button{
+    margin: 80px auto;
+}
+
+#nineth-page .name-of-input-box{
+    display: block;
+    width: 280px;
+    margin: 70px auto 0px auto;
+    padding: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#success-message{
+    font-weight: 700;
+    color: #3684f1;
+}
+
+.blue-button{
+    background-color: #3684f1;
+}
+
+.blue-button-disable{
+    background-color: #c1d3ee;
+}
+
+.next-button-solo{
+    width: 300px;
+    margin: 0 auto;
+    color: white;
+    font-size: 15px;
+    height: 40px;
+    line-height: 35px;
+    margin: 0 20px;
+    border-radius: 10px;
+}

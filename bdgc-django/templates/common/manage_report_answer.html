@@ -1,0 +1,86 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta charset="utf-8">
+</head>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap.min.css' %}">
+
+<body>
+
+
+    <div class="container my-3">
+        <!-- 질문 -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="../statistics">통계</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../report_list">문의확인</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../user">유저관리</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../../logout">로그아웃</a>
+            </li>
+        </ul>
+        <br>
+        <h1>문의 내용</h1>
+
+        <div class="card">
+            <h5 class="card-header">제목</h5>
+            <div class="card-body">
+                <h5 class="card-title">{{ report.title }}</h5>
+            </div>
+            <h5 class="card-header">분류</h5>
+            <div class="card-body">
+                <h5 class="card-title">{{ report.type }}</h5>
+            </div>
+            <h5 class="card-header">사유</h5>
+            <div class="card-body">
+                <p class="card-text">{{ report.reason }}</p>
+                <p class="card-text"><small class="text-muted">{{ report.created_time }}</small></p>
+            </div>
+            {% if report.file_path != "False" %}
+            <h5 class="card-header">사진</h5>
+            <img src="{{ report.file_path.url }}" class="card-img-bottom">
+            {% endif %}
+        </div>
+
+        {% if report.status == "접수완료" %}
+        <br>
+        <h1>답변 등록</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <div class="mb-3">
+                    <label for="mail_title" class="form-label">메일 제목</label>
+                    <textarea name="mail_title" id="mail_title" class="form-control" rows="1"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="mb-3">
+                    <label for="mail_message" class="form-label">메일내용</label>
+                    <textarea name="mail_message" id="mail_message" class="form-control" rows="10"></textarea>
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 d-md-block">
+                <input type="submit" value="답변 메일 전송하기" class="btn btn-primary">
+            </div>
+
+        </form>
+        <button onclick="location.href = '../report_list'" class="btn btn-secondary"> 문의내역으로 돌아가기</button>
+
+        {% else %}
+        <h2> 답변이 전송된 문의 입니다.</h1>
+        <button onclick="location.href = '../report_list'" class="btn btn-secondary"> 문의내역으로 돌아가기</button>
+        {% endif %}
+
+    </div>
+
+
+</body>

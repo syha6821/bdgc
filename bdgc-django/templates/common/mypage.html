@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <title>배달가치</title>
+    <link rel="stylesheet" href="../../static/css/reset.css">
+    <link rel="stylesheet" href="../../static/css/common_style.css">
+    <link rel="stylesheet" href="../../static/css/common/mypage_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script
+      defer
+      type="text/javascript"
+      src="../../static/js/common/mypage.js"
+    ></script>
+</head>
+<body onpageshow="first_loading()">
+    <header>
+        <div class="header-area">
+            <div class="logo-box" onclick="location.href='/'">
+                <img class="logo-image" src="../../static/image/bdgc_logo.png">
+            </div>
+            <div class="profile-box">
+                <img class="profile-image" src="../../static/image/user_icon.png">
+            </div>
+        </div>
+    </header>
+    
+    <div class="name-of-page">
+        <span>마이페이지</span>
+    </div>
+    
+
+    <div class="my-info-area">
+        <span id="manner_score"></span>
+        <div class="my-info-box">
+            <span id="nickname"></span><span>&nbsp;&nbsp;님</span><button id="edit-info-button">내 정보 수정</button>
+        </div>
+        <div class="my-info-box">
+            <span id="my-location">내 위치 변경</span>
+            <div id="location-select-box">
+                <select class="select-box">
+                  <option value="학교 내부" >
+                    학교 내부&nbsp;&nbsp;&nbsp;&nbsp;
+                  </option>
+                  <option value="학교 앞 원룸">학교 앞 원룸&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                  <option value="옥계">옥계&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                </select>
+                <span id="select-under-arrow">⌄</span>
+              </div>
+        </div>
+      
+        <div class="my-info-box">
+            <span id="alim">알림 받기</span>
+            <label class="switch">
+                  <input id="slider-checkbox" type="checkbox">
+                  <span class="slider round"></span>
+            </label>
+        </div>
+        
+        <div class="my-info-box" >
+            <span id="alim">파티 기록</span>
+             <button id="edit-info-button" onclick = "location.href = 'party_history'" >기록보기</button>
+        </div>
+        
+        <div class="my-info-box" >
+            <span id="alim">이메일 문의</span>
+             <button id="edit-info-button" onclick = "location.href = 'report_history'" >이동하기</button>
+        </div>
+
+        <div class="my-info-box" id="extra-box">
+            <span id="extra">기타</span><button id="extra-button">이동하기</button>
+        </div>
+
+       
+
+    </div>
+
+    <footer>
+        <button type="button" id="log-out-button" onclick="location.href= '../logout' ;">로그아웃</button>
+        <div id="open-footer-button" class="open">
+            사이트 정보 확인
+        </div>
+        <div id="footer-info">
+            <div>
+                <a onclick="location.href='https://fabulous-dimple-deb.notion.site/b477b8efa20b446caf7576e33afed8df'">이용약관 |</a>
+                <span>상호 : 배달가치 |</span>
+                <span>대표 : 송윤하</span>
+            </div>
+            <div>
+                <a>사업등록번호 : 564-10-02044</a>
+            </div>
+            <div>
+                <a>장소 : 경상북도 구미시 거양길 18-4</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="edit-info-modal">
+        <div class="info-content-box">
+            <div class="info-edit-select-box">
+                <button>닉네임 변경</button>
+                <button>비밀번호 변경</button>
+            </div>
+            <div class="info-nickname-edit-box hidden">
+                <div class="input-box-parent">
+                    <span class="name-of-input-box">닉네임</span>
+                    <div class="input-box" id="nickname-input-box">
+                    <input type="text" maxlength="13" id="nickname-input" spellcheck="false">
+                    </div>
+                    <span class="explain-span" id="nickname-explain-span">2글자 이상 한글, 영문자, 숫자 ( 중복가능 )</span>
+                </div>
+            </div>
+            <div class="info-password-edit-box hidden">
+                <div class="input-box-parent">
+                    <span class="name-of-input-box">현재 비밀번호</span>
+                    <div class="input-box" id="current-password-input-box">
+                    <input type="password" maxlength="13" id="current-password-input" spellcheck="false">
+                    </div>
+                    <span class="explain-span" id="current-password-explain-span"></span>
+                </div>
+                <div class="input-box-parent">
+                    <span class="name-of-input-box">새로운 비밀번호</span>
+                    <div class="input-box" id="password-input-box">
+                    <input type="password" maxlength="13" id="password-input" spellcheck="false">
+                    </div>
+                    <span class="explain-span" id="password-explain-span">6글자 이상 영소,대문자 / 숫자, 특수문자 포함 가능</span>
+                </div>
+                <div class="input-box-parent">
+                    <span class="name-of-input-box">새로운 비밀번호 확인</span>
+                    <div class="input-box" id="password-check-input-box">
+                    <input type="password" maxlength="13" id="password-check-input" spellcheck="false">
+                    </div>
+                    <span class="explain-span" id="password-check-explain-span">&nbsp;</span>
+                </div>
+            </div>
+            <div class="modal-button-box">
+                <button type="button" id="modal-close-button" onclick="edit_info_modal_close()">이전</button>
+                <button type="button" id="modal-save-button" onclick="edit_info_modal_save()" disabled>변경</button>
+            </div>
+        </div>
+        <div class="modal-layer">
+        </div>
+      </div>
+
+    <div class="extra-info-modal">
+        <div class="extra-info-content-box">
+            <div class="extra-info-select-box">
+                <button type="button" id="withdraw">회원탈퇴</button>
+                <a href="http://pf.kakao.com/_dFbeb">
+                    <span>기타문의</span>
+                    <br>
+                    <span>http://pf.kakao.com/_dFbeb</span>
+                </a>
+            </div>
+        <button type="button" id="close-extra-info-modal-button">이전</button>
+        </div>
+        <div class="modal-layer">
+        </div>
+    </div>
+
+
+</body>
+</html>

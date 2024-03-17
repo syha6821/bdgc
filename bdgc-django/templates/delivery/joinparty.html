@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    {% include "meta.html"%}
+    
+    <title>배달가치</title>
+    <link rel="shortcut icon" href="../../static/image/bdgc_logo_smile.png">
+    <link rel="stylesheet" href="../../static/css/reset.css">
+    <link rel="stylesheet" href="../../static/css/common_style.css">
+    <link rel="stylesheet" href="../../static/css/joinparty_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script defer type="text/javascript" src="../../static/js/joinparty.js"></script>
+    <script defer type="text/javascript" src="../../static/js/common.js"></script>
+
+
+</head>
+<body>
+    <!-- {% csrf_token %} -->
+    <header>
+        <div class="header-area">
+            <div class="logo-box" onclick="location.href='/'">
+                <img class="logo-image" src="../../static/image/bdgc_logo.png">
+            </div>
+            <div class="profile-box">
+                <img class="profile-image" src="../../static/image/user_icon.png">
+            </div>
+        </div>
+    </header>
+
+    <div class="make-party-input-area" id="fifth-page">
+        <span class="name-of-page">주문하실 메뉴와 가격을 입력해 주세요</span>
+        <div class="name-of-input" id="name-of-store">
+            <span class="name-of-store-span">{{restaurant_name}}</span>
+            <a class="goto-name-of-store-span" href="{{restaurant_link}}">
+            <span>메뉴확인</span>
+            </a>
+        </div>
+        <div class="menu-receipt first-menu-receipt">
+            <div class="menu-receipt-menu">
+                <span class="name-of-input-box">메뉴명</span>
+                <div class="input-box receipt-box" id="menu-box" >
+                    <input type="text" class="menu-name"  oninput="input_is_all_filled()" placeholder="위 음식점의 메뉴를 입력해 주세요" spellcheck="false">
+                </div>
+            </div>
+            <div class="menu-receipt-price">
+                <span class="name-of-input-box">가격</span>
+                <div class="input-box receipt-box" id="price-box">
+                    <input type="text" class="menu-prices"  oninput="input_is_all_filled()" oninput="" onclick="move_cursor_before_won(event)" onkeyup="number_comma(event)" pattern="[0-9]*" min="0" id="price-box" placeholder="입력하신 메뉴의 가격을 입력해 주세요" spellcheck="false">
+                </div>
+            </div>
+            <div class="menu-receipt-number">                
+                <span class="menu-number-span name-of-input-box">수량</span>
+
+                <div class="input-box receipt-box number-box-parent">
+                    <div class="input-box receipt-box" id="number-box">
+                        <img class="number-button" id="menu-minus-button" onclick="minus_menu_number(event);input_is_all_filled();" src="../../static/image/minus_icon.png">
+                        <input type="number" name="menu-number" pattern="\d*" min="1" class="menu-numbers" id="menu-number-input" value="1" spellcheck="false" readonly>
+                        <img class="number-button" id="menu-plus-button" onclick="plus_menu_number(event);input_is_all_filled();" src="../../static/image/plus_icon.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="add-button button">
+            메뉴 추가
+        </button>
+    </div>
+
+    <div class="make-party-input-area hidden" id="nineth-page">
+        <span class="name-of-page">파티에 참가 중 입니다</span>
+        <div class="make-party-content-box" id="final-page">
+            <div class="loading-ring-parent">
+                <div class="lds-ring" id="final-loading-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+            <div class="share-link-box hidden">
+                <span id="success-message">파티가 완성되면 카톡으로 알려드릴게요!</span>
+                
+                <span class="name-of-input-box">파티공유링크를 눌러서 복사하세요</span>
+                <div class="input-box">
+                    <span onclick="copyClipboard()" id="share-link"></span>
+                </div>
+                <button class="button next-button-solo blue-button" id="go-to-home-button" onclick="location.href='/'">
+                    메인페이지로 이동
+                </button>
+            </div>
+            <div class="fail-box hidden">
+                <span id="error-message"></span>
+                <img id="error-icon" src="../../static/image/error_icon.png">
+            </div>
+            
+        </div> 
+        </div>
+    </div>
+
+    <div class="join-info-area">
+        <div id="join-info-box">
+            <div class="join-info-span-box">
+                <span>최소 참가 금액&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="minimum-money">{{required_minimum_price}}</span><span> 원</span>
+            </div>
+            <div class="join-info-span-box">
+                <span>현재 주문 금액&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="current-money">0</span><span> 원</span>
+            </div>
+            <button id="join-button" disabled>
+                참가
+            </button>
+        </div>
+    </div>    
+</body>
+</html>

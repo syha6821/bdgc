@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    {% include "meta.html"%}
+    <title>파티모집장소</title>
+    <link rel="stylesheet" href="../../static/css/reset.css" />
+    <link rel="stylesheet" href="../../static/css/common_style.css" />
+    <link rel="stylesheet" href="../../static/css/party_location_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ec6zgzjygt"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="../../static/js/party_location.js"
+    ></script>
+  </head>
+  <body> 
+    <header>
+      <div class="header-area">
+        <div class="info-box"  onclick="location.href='https://fabulous-dimple-deb.notion.site/ede9b206c31b4d96a9b79c3a1c0ddcce'"  >
+          <img class="info-image" src="../../static/image/info_icon.png" />
+        </div>
+        <div class="logo-box" onclick="location.href='/'">
+          <img class="logo-image" src="../../static/image/bdgc_logo.png" />
+        </div>
+        <div class="profile-box" onclick="location.href='/common/myPage'">
+          <img class="profile-image" src="../../static/image/user_icon.png" />
+        </div>
+      </div>
+    </header>
+
+    <div class="search-area">
+      파티 모집 장소
+    </div>
+
+    <div class="content-box">
+        <div id="map">
+          
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <script defer type="text/javascript" src="../../static/js/common/manage_user.js"></script>
+</head>
+
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/bootstrap.min.css' %}">
+
+<div class="container my-3">
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" href="statistics">통계</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="report_list">문의확인</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page"  href="user">유저관리</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../logout">로그아웃</a>
+        </li>
+      </ul>
+      <br>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" id="search_user_id" value="{{ user_id|default_if_none:'' }}" placeholder="검색할 유저 아이디를 입력하세요" >
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="btn_search">검색</button>
+        </div>
+    </div>
+
+    {% if user_list %}
+        {% for user in user_list %}
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <div class="d-flex justify-content-between">
+                            {{ user.identification }}
+                            {% if user.is_banned %}
+                            <div class="form-check form-switch" >
+                                <input class="form-check-input" style="cursor: pointer;" type="checkbox" name="banCheckBox" value={{user.identification}} checked >
+                            </div>
+                            {% else %}
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" style="cursor: pointer;" type="checkbox" name="banCheckBox" value={{user.identification}} >
+                            </div>
+                            {% endif %}
+                        </div>
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title"> 닉네임 : {{ user.nick_name }}</h6>
+                    <h6 class="card-title"> 핸드폰번호 : {{ user.phone_number }}</h6>
+                    <h6 class="card-title"> 이메일 : {{ user.email }}@kumoh.ac.kr</h6>
+                    <h6 class="card-title"> 매너점수 : {{ user.manner_score }}</h6>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+       <h2>검색된 유저가 없습니다.</h2>
+    {% endif %}
+    
+   
+    <!-- 페이징처리 시작 -->
+    <ul class="pagination justify-content-center">
+        <!-- 이전페이지 -->
+        {% if user_list.has_previous %}
+        <li class="page-item">
+            <a class="page-link" data-page="{{ user_list.previous_page_number }}" href="javascript:void(0)" >이전</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+        </li>
+        {% endif %}
+        <!-- 페이지리스트 -->
+        {% for page_number in user_list.paginator.page_range %}
+        {% if page_number >= user_list.number|add:-5 and page_number <= user_list.number|add:5 %}
+        {% if page_number == user_list.number %}
+        <li class="page-item active" aria-current="page">
+            <a class="page-link" data-page="{{ page_number }}" href="javascript:void(0)">{{ page_number }}</a>
+        </li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link" data-page="{{ page_number }}" href="javascript:void(0)">{{ page_number }}</a>
+        </li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        <!-- 다음페이지 -->
+        {% if user_list.has_next %}
+
+        <li class="page-item">
+            <a class="page-link" data-page="{{ user_list.next_page_number }}" href="javascript:void(0)">다음</a>
+
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+        </li>
+        {% endif %}
+    
+    </ul>
+    <!-- 페이징처리 끝 -->
+</div>
+
+<form id="searchForm" method="get">
+    <input type="hidden" id="user_id" name="user_id" value="{{ user_id|default_if_none:'' }}">
+    <input type="hidden" id="page" name="page" value="{{ page }}">
+</form>
+
+
+
+
+
+
+
+

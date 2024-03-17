@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>회원가입-배달가치</title>
+    <link rel="stylesheet" href="../../static/css/reset.css">
+    <link rel="stylesheet" href="../../static/css/common_style.css">
+    <link rel="stylesheet" href="../../static/css/common/find_id.css">
+    <script defer type="text/javascript" src="../../static/js/common/find_id.js"></script>
+</head>
+
+<body>
+    {% csrf_token %}
+    <header>
+        <div class="header-area" onclick="location.href='/'">
+            <div class="logo-box">
+                <img class="logo-image" src="../../static/image/bdgc_logo.png">
+            </div>
+            <div class="profile-box">
+                <img class="profile-image" src="../../static/image/user_icon.png">
+            </div>
+        </div>
+    </header>
+    <h1>아이디 찾기</h1>
+    <h2>가입하신 학교 이메일을 입력해 주세요</h2>
+    
+    <div class="email-box" id="email-box-id">
+        <div class="input-box">
+            <input type="text" id="input_email" spellcheck="false">
+        </div>
+        <span class="email-span">@kumoh.ac.kr</span>
+
+        <div id="ring-parent">
+            <div class="lds-ring hidden"><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+
+    <a>
+    <button class="button next-button-solo blue-button-disable" id="verify-button" disabled>
+        메일전송
+    </button>
+    </a>
+</body>
+</html>

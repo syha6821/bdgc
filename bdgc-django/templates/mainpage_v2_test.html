@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    {% include "meta.html"%}
+    <title>배달가치</title>
+    <link rel="stylesheet" href="../../static/css/reset.css" />
+    <link rel="stylesheet" href="../../static/css/common_style.css" />
+    <link rel="stylesheet" href="../../static/css/mainpage_v2_test_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ec6zgzjygt"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="../../static/js/mainpage_v2_test.js"
+    ></script>
+  </head>
+  <body> 
+    <header>
+      <div class="header-area">
+        <div class="info-box"  onclick="location.href='https://fabulous-dimple-deb.notion.site/ede9b206c31b4d96a9b79c3a1c0ddcce'"  >
+          <img class="info-image" src="../../static/image/info_icon.png" />
+        </div>
+        <div class="logo-box" onclick="location.href='/'">
+          <img class="logo-image" src="../../static/image/bdgc_logo.png" />
+        </div>
+        <div class="profile-box" onclick="location.href='/common/myPage'">
+          <img class="profile-image" src="../../static/image/user_icon.png" />
+        </div>
+      </div>
+    </header>
+
+    <div class="search-area">
+        <div class="search-by-category">
+            <span>음식종류:</span>
+            <span id="search-area-category-name">전체</span>
+        </div>
+        
+        <!-- <div class="search-by-time">
+            <span>남은시간:</span>
+            <span>전체</span>
+        </div> -->
+    </div>
+
+    <div class="content-box">
+        <div id="map" data-locationName="">
+          
+        </div>
+        
+        
+        <div class="bottom-box">
+            <div class="my-party hidden">
+                <div class="my-party-box">
+                    <button id="party-box-button">
+                        <img src="../../static/image/down_arrow_black.png">
+                    </button>
+                </div>
+            </div>
+            <div id="explain-box">
+                <div id="explain-box-header">
+                  파티를 생성하여 같이 배달시켜 보세요 👍
+                </div>
+                <div id="explain-box-content">
+                  최소주문금액을 맞출 수 있어요 🤑
+                  <br />
+                  배달비를 나누어서 계산 할 수 있어요 👥
+                </div>
+                <button id="manual-button" onclick="location.href='https://fabulous-dimple-deb.notion.site/ede9b206c31b4d96a9b79c3a1c0ddcce'">사용방법</button>
+                <button id="create-party-button" onclick="location.href='/party/create'">파티생성</button>
+             </div>
+        </div>
+        
+        <div class="loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+      
+    </div>
+  </body>
+</html>

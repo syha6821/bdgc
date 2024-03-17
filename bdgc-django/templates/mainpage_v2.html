@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    {% include "meta.html"%}
+    <title>배달가치</title>
+    <link rel="stylesheet" href="../../static/css/reset.css" />
+    <link rel="stylesheet" href="../../static/css/common_style.css" />
+    <link rel="stylesheet" href="../../static/css/mainpage_v2_style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ec6zgzjygt"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="../../static/js/common.js"
+    ></script>
+    <script
+      defer
+      type="text/javascript"
+      src="../../static/js/mainpage_v2.js"
+    ></script>
+  </head>
+  <body> 
+    <header>
+      <div class="header-area">
+        <div class="info-box"  onclick="location.href='https://fabulous-dimple-deb.notion.site/ede9b206c31b4d96a9b79c3a1c0ddcce'"  >
+          <img class="info-image" src="../../static/image/info_icon.png" />
+        </div>
+        <div class="logo-box" onclick="location.href='/'">
+          <img class="logo-image" src="../../static/image/bdgc_logo.png" />
+        </div>
+        <div class="profile-box" onclick="location.href='/common/myPage'">
+          <img class="profile-image" src="../../static/image/user_icon.png" />
+        </div>
+      </div>
+
+      <div id="search-map-box">
+        <div id="search-map">지도로 검색</div>
+      </div>
+    </header>
+
+    <div class="search-area">
+      <div class="searchbar-box">
+        <img
+          id="left-arrow-icon"
+          src="../../static/image/left_arrow_icon.png"
+        />
+        <input
+          type="text"
+          id="searchbar"
+          placeholder="매장이나 메뉴를 검색하세요"
+          spellcheck="false"
+          onkeyup="if(window.event.keyCode==13){(search_by_keyword())}"
+        />
+      </div>
+      <div id="location-select-box">
+        <select class="select-box">
+          <option value="" selected>
+            모든 지역&nbsp;&nbsp;&nbsp;&nbsp;
+          </option>
+          <option value="학교 내부">
+            학교 내부&nbsp;&nbsp;&nbsp;&nbsp;
+          </option>
+          <option value="학교 앞 원룸">학교 앞 원룸&nbsp;&nbsp;&nbsp;&nbsp;</option>
+          <option value="옥계">옥계&nbsp;&nbsp;&nbsp;&nbsp;</option>
+        </select>
+        <span id="select-under-arrow">⌄</span>
+      </div>
+      <div class="search-button" onclick="search_by_keyword()">
+        <img id="search-icon" src="../../static/image/search_icon.png" />
+      </div>
+    </div>
+
+    <div class="content-box">
+      <div id="explain-box">
+        <div id="explain-box-header">
+          파티를 생성하여 같이 배달시켜 보세요 👍
+        </div>
+        <div id="explain-box-content">
+          최소주문금액을 맞출 수 있어요 🤑
+          <br />
+          배달비를 나누어서 계산 할 수 있어요 👥
+        </div>
+        <div id="explain-box-button-area">
+          <button onclick="location.href='https://fabulous-dimple-deb.notion.site/ede9b206c31b4d96a9b79c3a1c0ddcce'">사용방법</button>
+          <button onclick="location.href='/party/create'">파티생성</button>
+        </div>
+      </div>
+
+      <div class="skeleton-box">
+        <div class="party-box-header">
+          <span class="party-store-name"></span>
+          <div class="party-box-header-small">
+            <span class="party-location-small"></span>
+            <span class="party-left-time"></span>
+          </div>
+        </div>
+        <div class="party-content-box">
+          <div class="party-condition">
+            <span class="name-of-party-condition">최소 참가 금액</span>
+            <span class="party-condition"></span>
+            <span>원</span>
+          </div>
+          <div class="party-condition">
+            <span class="name-of-party-condition">인당 배달비</span>
+            <span class="party-condition"></span>
+            <span>원</span>
+          </div>
+          <div class="party-condition">
+            <span class="name-of-party-condition">참가 인원</span>
+            <span class="party-people-number"></span>
+            <span class="party-people-number">/</span>
+            <span class="party-people-number"></span>
+          </div>
+          <div class="party-condition">
+            <span class="name-of-party-condition">주문예상시간</span>
+            <span class="party-condition"></span>
+          </div>
+        </div>
+        <div class="party-button-area">
+          <button>모집장소</button>
+          <button>참가</button>
+        </div>
+      </div>
+
+      <div class="skeleton-box">
+        <div class="party-box-header">
+          <span class="party-store-name"></span>
+          <div class="party-box-header-small">
+            <span class="party-location-small"></span>
+            <span class="party-left-time"></span>
+          </div>
+        </div>
+        <div class="party-content-box">
+          <div class="party-condition">
+            <span class="name-of-party-condition">최소 참가 금액</span>
+            <span class="party-condition"></span>
+            <span>원</span>
+          </div>
+          <div class="party-condition">
+            <span class="name-of-party-condition">인당 배달비</span>
+            <span class="party-condition"></span>
+            <span>원</span>
+          </div>
+          <div class="party-condition">
+            <span class="name-of-party-condition">참가 인원</span>
+            <span class="party-people-number"></span>
+            <span class="party-people-number">/</span>
+            <span class="party-people-number"></span>
+          </div>
+          <div class="party-condition">
+            <span class="name-of-party-condition">주문예상시간</span>
+            <span class="party-condition"></span>
+          </div>
+        </div>
+        <div class="party-button-area">
+          <button>모집장소</button>
+          <button>참가</button>
+        </div>
+      </div>
+    </div>
+
+    <span id="end-of-page-span"></span>
+
+
+    <!--search_by_map_modal  -->
+    <div class="search-by-map-modal">
+      <div class="map-content-box">
+        <div id="map-for-search">
+          
+        </div>
+        <div class="selected-party">
+          <div class="selected-party-box">
+            <span id="selected-party-explain-span">핀을 선택해서 파티정보를 확인해 보세요</span>
+            <div id="selected-party-box-inner-1">
+              
+              <span>
+                선택된 파티
+              </span>
+              <div id="selected-party-store-name">
+              </div>
+
+              <span>
+                최소 참가 금액
+              </span>
+              <div id="selected-party-participation-fee">
+              </div>
+
+              <span>
+                인당 배달비
+              </span>
+              <div id="selected-party-delivery-fee">
+              </div>
+
+              <span>
+                주문예상시간
+              </span>
+              <div id="selected-party-order-time">
+              </div>
+
+            </div>
+            
+            <div id="selected-party-box-inner-2">
+            </div>
+            
+            <button id="selected-party-participate-button">
+              참가
+            </button>
+
+            <button id="selected-party-box-button">
+              <img src="../../static/image/down_arrow.png">
+            </button>
+            
+          </div>
+        </div>
+        <button type="button" id="modal-close-button" onclick="search_by_map_close()">닫기</button>
+      </div>
+      <div class="modal-map-layer">
+      </div>
+    </div>
+
+
+    <!-- location_check_modal -->
+    <div class="location-check-modal">
+      <div class="map-content-box">
+        <div id="map">
+          
+        </div>
+
+        <button type="button" id="modal-close-button" onclick="check_location_close()">닫기</button>
+
+      </div>
+      <div class="modal-map-layer">
+      </div>
+    </div>
+
+    <div class="my-party hidden">
+      <div class="my-party-box">
+        
+        <button id="party-box-button">
+          <img src="../../static/image/down_arrow.png">
+        </button>
+      </div>
+
+      
+    </div>
+
+  </body>
+</html>

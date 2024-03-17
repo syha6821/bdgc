@@ -1,0 +1,110 @@
+
+button{
+    -webkit-tap-highlight-color: transparent;
+}
+
+header{
+    position: sticky;
+    top:0;
+    background-color: white;
+    border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+    z-index: 50;
+}
+
+.header-area{
+    display: flex;
+    position: relative;
+    background-color: white;
+    margin: 0 auto;
+    align-items: center;
+    height: 60px;
+    width: auto;
+    max-width: 500px;
+}
+
+.logo-box{
+    margin: 0 auto;
+}
+
+.logo-image{
+    width: 90px;
+}
+
+.profile-box{
+    position: absolute;
+    right: 10px;
+}
+
+.profile-image{
+    width: 30px;
+}
+.info-box{
+    position: absolute;
+    left: 13px;
+}
+
+.info-image{
+    width: 28px;
+}
+
+.button{
+    display: block;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    width: 65px;
+    padding: 0 5px;
+    margin: 0 0 0 15px;
+    line-height: 30px;
+    height: 35px;
+    font-size: 15px;
+    background-color: green;
+}
+
+.input-box{
+    display: flex;
+    align-items: center;
+    background-color: #f2f3f3;
+    width: 90%;
+    height: 40px;
+    border: 1px solid #f2f3f3;
+    border-radius: 7px;
+    margin: 0px auto;
+}
+
+input{
+    position: relative;
+    width: 100%;
+    left: 10px;
+    max-width: 300px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 14px;
+    border: none;
+    background-color: #f2f3f3;
+}
+
+input:focus{
+    outline: none;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: gray;
+}
+
+footer div{
+    font-size: 13px;
+    width: fit-content;
+    margin: 5px auto;
+    font-weight: 500;
+}
+
+@media screen and (max-height: 500px) {
+
+    footer,.join-info-area {
+        display: none;
+    }
+}

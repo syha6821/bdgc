@@ -1,0 +1,112 @@
+.login-input-area{
+    position: relative;
+    top:100px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.user-id-box{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 333px;
+    height: 52px;
+    border: 1px solid #dddfe2;
+    border-radius: 7px;
+    margin: 10px auto;
+}
+
+
+#user-id{
+    position: relative;
+    width: 100%;
+    left: 15px;
+    max-width: 270px;
+    height: 22px;
+    line-height: 22px;
+    /* margin-left: 35px; */
+    font-size: 16px;
+    border: none;
+}
+
+#user-id:focus{
+    outline: none;
+}
+
+.user-id-image{
+    position: relative;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+.user-password-box{
+    display: flex;
+    margin: 10px auto;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #dddfe2;
+    border-radius: 7px;
+    width: 333px;
+    height: 52px;
+}
+
+#user-password{
+    position: relative;
+    width: 100%;
+    left: 15px;
+    max-width: 270px;
+    height: 22px;
+    line-height: 22px;
+    /* margin-left: 35px; */
+    font-size: 16px;
+    border: none;
+}
+
+#user-password:focus{
+    outline: none;
+}
+
+.user-password-image{
+    position: relative;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+.login-button{
+    position: relative;
+    margin: 0 auto;
+    color: white;
+    width: 110px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    background-color: #1777f2;
+    top:120px;
+}
+
+.login-list{
+    display: block;
+    font-size: 13px;
+    left: 10px;
+    width:fit-content;
+    margin: 0 auto;
+    position: relative;
+    color: gray;
+    top: 150px;
+}
+
+.login-list>ul>li{
+    float: left;
+    padding: 0 10px;
+    border-right: 1px solid gray;
+}
+
+.login-list>ul>li:first-child{
+    border-left: none;
+}
+
+.login-list>ul>li:last-child{
+    border-right: none;
+}
