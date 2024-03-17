@@ -3,6 +3,12 @@
 
   [더 자세한 설명은 여기로!](https://fabulous-dimple-deb.notion.site/ede9b206c31b4d96a9b79c3a1c0ddcce)
 
+  - 데모영상
+
+  [파티생성](https://youtu.be/KADlQCrWI_0)
+
+  [회원가입](https://youtu.be/Q8nCXacjots)
+
 - **🧐 배달가치가 뭔가요?**
 
   배달을 시켜먹고 싶은데 배달비도 너무 비싸고...
@@ -35,12 +41,6 @@
   채팅방에 참가하여
 
   금액 지불
-
-- 데모영상
-
-  [파티생성](https://youtu.be/KADlQCrWI_0)
-
-  [회원가입](https://youtu.be/Q8nCXacjots)
 
 - 구조도
 
