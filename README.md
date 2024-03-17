@@ -1,7 +1,7 @@
 배달가치 - 배달비 공유 서비스
 =======================
 
-  [배달가치 설명서](https://fabulous-dimple-deb.notion.site/ede9b206c31b4d96a9b79c3a1c0ddcce)
+  [더 자세한 설명은 여기로!](https://fabulous-dimple-deb.notion.site/ede9b206c31b4d96a9b79c3a1c0ddcce)
 
 - **🧐 배달가치가 뭔가요?**
 
