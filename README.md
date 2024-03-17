@@ -1,6 +1,8 @@
 배달가치 - 배달비 공유 서비스
 =======================
 
-[파티생성 데모 영상](https://youtu.be/KADlQCrWI_0)
+- 데모영상
 
-[회원가입 데모 영상](https://youtu.be/Q8nCXacjots)
+  [파티생성](https://youtu.be/KADlQCrWI_0)
+
+  [회원가입](https://youtu.be/Q8nCXacjots)
