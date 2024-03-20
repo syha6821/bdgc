@@ -1,6 +1,9 @@
 배달가치 - 배달비 공유 서비스
 =======================
 
+![IMG_2962 (1)](https://github.com/syha6821/bdgc/assets/83122197/ca2b1178-90e1-4fa2-a8af-dd6c7d16480a)
+
+
   - 데모영상
 
     [파티생성](https://youtu.be/KADlQCrWI_0)
